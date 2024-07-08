@@ -1,0 +1,14 @@
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\bin\Debug\net8.0\alumnos.exe
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\bin\Debug\net8.0\alumnos.deps.json
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\bin\Debug\net8.0\alumnos.runtimeconfig.json
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\bin\Debug\net8.0\alumnos.dll
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\bin\Debug\net8.0\alumnos.pdb
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.AssemblyInfoInputs.cache
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.AssemblyInfo.cs
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.csproj.CoreCompileInputs.cache
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.dll
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\refint\alumnos.dll
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.pdb
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.genruntimeconfig.cache
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\ref\alumnos.dll
