@@ -1,34 +1,37 @@
-﻿int x = 100; // ejemplo: 100 alumnos ingresan cada año
+﻿int años = 10; // número de años a simular
+int[] alumnos = new int[6]; // número de alumnos por año (indexado de 1 a 5)
+int nuevosAlumnos = 100; // número de nuevos alumnos que entran cada año
 
-// Arreglo para almacenar la cantidad de alumnos por año (5 años de carrera)
-int[] alumnosPorAño = new int[5];
+// Porcentajes de transición (expresados como decimales)
+double[] a = { 0, 0.8, 0.7, 0.6, 0.5, 0 }; // índice 0 no se usa
+double[] b = { 0, 0.1, 0.15, 0.2, 0.25, 0.3 };
+double[] c = { 0, 0.1, 0.15, 0.2, 0.25, 0.3 };
 
-// Definir los porcentajes iniciales para pasar al siguiente año y repetir
-double[] a = { 0.0, 0.70, 0.75, 0.80, 0.85 }; // porcentajes de pasar al siguiente año
-double[] c = { 0.0, 0.25, 0.20, 0.15, 0.10 }; // porcentajes de repetir
-
-// Generar valores aleatorios para a y c dentro de un rango predefinido
-Random random = new Random();
-for (int i = 1; i < a.Length; i++)
+for (int t = 1; t <= años; t++)
 {
-    a[i] = random.NextDouble() * 0.15 + 0.70; // valores entre 0.70 y 0.85
-    c[i] = random.NextDouble() * 0.15 + 0.10; // valores entre 0.10 y 0.25
-}
+    // Actualizamos el número de alumnos que ingresan al primer año
+    int nuevosIngresos = nuevosAlumnos;
+    int[] nuevosAlumnosPorAño = new int[6];
 
-// Calcular para el primer año (t = 1)
-alumnosPorAño[0] = x;
+    // Año 1
+    nuevosAlumnosPorAño[1] = nuevosIngresos + (int)(c[1] * alumnos[1]);
 
-// Calcular para los años restantes (t > 1)
-for (int t = 2; t <= 5; t++)
-{
-    // Calcular el número de alumnos para el año t
-    alumnosPorAño[t - 1] = Convert.ToInt32(alumnosPorAño[t - 2] * a[t - 1]); // pasa al siguiente año
-    alumnosPorAño[t - 1] += Convert.ToInt32(alumnosPorAño[t - 2] * c[t - 1]); // se queda repitiendo
-}
+    // Años 2 a 5
+    for (int i = 2; i <= 5; i++)
+    {
+        nuevosAlumnosPorAño[i] = (int)(a[i - 1] * alumnos[i - 1]) + (int)(c[i] * alumnos[i]);
+    }
 
-// Mostrar los resultados
-Console.WriteLine("Cantidad de alumnos por año:");
-for (int t = 1; t <= 5; t++)
-{
-    Console.WriteLine($"Año {t}: {alumnosPorAño[t - 1]} alumnos");
+    // Actualizamos el número de alumnos para el siguiente ciclo
+    for (int i = 1; i <= 5; i++)
+    {
+        alumnos[i] = nuevosAlumnosPorAño[i];
+    }
+
+    // Imprimimos los resultados del año actual
+    Console.WriteLine($"Año {t}:");
+    for (int i = 1; i <= 5; i++)
+    {
+        Console.WriteLine($"  Año {i}: {alumnos[i]} alumnos");
+    }
 }

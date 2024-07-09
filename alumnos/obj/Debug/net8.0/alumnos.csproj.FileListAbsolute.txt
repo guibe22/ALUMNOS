@@ -12,3 +12,4 @@ C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\refint\alumnos
 C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.pdb
 C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.genruntimeconfig.cache
 C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\ref\alumnos.dll
+C:\Users\galve\Desktop\PROYECTOS\ALUMNOS\alumnos\obj\Debug\net8.0\alumnos.sourcelink.json
