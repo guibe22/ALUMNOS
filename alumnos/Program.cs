@@ -24,19 +24,37 @@ class Program
 
         for (int t = 1; t <= intervalo; t++)
         {
-            // Actualizamos el número de alumnos que ingresan al primer año
+            // Calculamos el número de nuevos ingresos al primer año aplicando la tasa de ingreso
+            // Si nuevosAlumnos es 100 y la tasaIngreso es 0.9, entonces nuevosIngresos será 90.
             int nuevosIngresos = (int)(nuevosAlumnos * tasaIngreso);
+            
+            // Creamos un array temporal para almacenar el número de alumnos por cada año en este ciclo
             int[] nuevosAlumnosPorAño = new int[8];
 
-            // Año 1
+            // Año 1:
+            // Calculamos el número de alumnos que ingresan al primer año.
+            // Sumamos los nuevos ingresos (nuevosIngresos) y el porcentaje de alumnos del primer año
+            // que se reincorporan debido a licencias médicas (c[1] * alumnos[1]).
             nuevosAlumnosPorAño[1] = nuevosIngresos + (int)(c[1] * alumnos[1]);
 
-            // Años 2 a 7
+            // Años 2 a 7:
             for (int i = 2; i <= 7; i++)
             {
+                // Calculamos el número de alumnos que pasan del año anterior (i-1) al año actual (i)
+                // Se multiplican los alumnos del año anterior por la tasa de transición 'a' y se añade
+                // un porcentaje de los alumnos actuales que se reincorporan por licencias médicas 'c'
                 nuevosAlumnosPorAño[i] = (int)(a[i - 1] * alumnos[i - 1]) + (int)(c[i] * alumnos[i]);
+
+                // Restamos los alumnos que desertan (tasaDesercion)
+                // La tasa de deserción se aplica al número calculado de alumnos en el año actual
                 nuevosAlumnosPorAño[i] -= (int)(tasaDesercion * nuevosAlumnosPorAño[i]);
+
+                // Restamos los alumnos que abandonan (tasaAbandono)
+                // La tasa de abandono se aplica al número de alumnos restantes después de descontar la deserción
                 nuevosAlumnosPorAño[i] -= (int)(tasaAbandono * nuevosAlumnosPorAño[i]);
+
+                // Restamos los alumnos que toman licencia médica (tasaLicenciaMedica)
+                // La tasa de licencia médica se aplica al número de alumnos restantes después de descontar la deserción y el abandono
                 nuevosAlumnosPorAño[i] -= (int)(tasaLicenciaMedica * nuevosAlumnosPorAño[i]);
             }
 
